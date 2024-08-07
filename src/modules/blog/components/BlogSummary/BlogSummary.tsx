@@ -4,7 +4,7 @@ import Masonry from '@mui/lab/Masonry';
 import { useTransition, animated } from "react-spring";
 import BlogCard from '../BlogCard';
 import { useBlogSummary } from '../../hooks/UseBlogSummary';
-import DelayedChild from '@/modules/core/components/DelayedChild';
+import DelayedChild from '@/modules/core/components/DelayedChild/DelayedChild';
 
 const BlogSummary = () => {
 
