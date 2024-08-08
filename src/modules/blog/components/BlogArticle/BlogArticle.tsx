@@ -9,9 +9,11 @@ const BlogArticle = async ({contentUrlSlug} : {contentUrlSlug: string}) => {
     const blogContent: string = await response.text();
 
     return (
-        <div className={styles.content}>
+    <div className={styles.content}>
+        <article className="prose lg:prose-xl">
             <MDXRemote source={blogContent} />
-        </div>
+        </article>
+    </div>
     );
 }
 
