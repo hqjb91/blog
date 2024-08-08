@@ -9,6 +9,7 @@
 
 .content * {
     color: rgb(var(--foreground-rgb));
+    overflow: auto;
 }
 
 @media (min-width: 80rem) {
