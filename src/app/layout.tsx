@@ -18,8 +18,7 @@ export default function RootLayout({
 }>) {
 
   const navItems = [
-    { linkName: 'HOME', linkUrl: '#', accessibleRoles: [] },
-    { linkName: 'ABOUT US', linkUrl: '#', accessibleRoles: [] },
+    { linkName: 'HOME', linkUrl: '/', accessibleRoles: [] },
   ];
 
   return (
