@@ -1,15 +1,7 @@
 import { api } from "@/modules/core/libs/ApiClient";
 import { QueryConfig } from "@/modules/core/libs/ReactQuery";
 import { queryOptions, useQuery } from "@tanstack/react-query";
-
-type BlogSummaryResult = {
-  id: number;
-  title: string;
-  subtitle: string;
-  content: string;
-  link: string;
-  isLastItem: boolean;
-};
+import { BlogSummaryResult } from "../entities";
 
 const blogSummaryApiClient = api(``);
 

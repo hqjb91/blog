@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useBlogSummaryService } from "../services/BlogSummaryService";
+import { BlogSummaryResult } from "../entities";
 
 export const useBlogSummary = () => {
     const [ blogContent, setBlogContent ] = useState<any>([]);
@@ -41,7 +42,7 @@ export const useBlogSummary = () => {
           }
         });
 
-        setBlogContent([...blogContent, ...resultsMappedToBlogContent]);
+        setBlogContent((previous: BlogSummaryResult[]) => [...previous, ...resultsMappedToBlogContent]);
 
         const reachedLastItem = data.some(article => article.isLastItem === true);
         if (data.length < 10 || reachedLastItem) setAbleToFetchNext(false);

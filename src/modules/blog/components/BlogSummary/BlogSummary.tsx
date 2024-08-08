@@ -4,7 +4,7 @@ import Masonry from '@mui/lab/Masonry';
 import { useTransition, animated } from "react-spring";
 import BlogCard from '../BlogCard';
 import { useBlogSummary } from '../../hooks/UseBlogSummary';
-import DelayedChild from '@/modules/core/components/DelayedChild/DelayedChild';
+import DelayedChild from '@/modules/core/components/DelayedChild';
 
 const BlogSummary = () => {
 
@@ -18,6 +18,7 @@ const BlogSummary = () => {
       enter: () => { return { transform: 'translate3d(0,0,0)', opacity: 1 }}
     });
 
+  const shouldDisplayLoadingFooter: boolean = ((blogContent.length > 0) && ableToFetchNext);
 
   return (
     <main>
@@ -30,7 +31,7 @@ const BlogSummary = () => {
           ))}
         </Masonry>
       </DelayedChild>
-      {(blogContent.length > 0) && ableToFetchNext && <footer className="p-10 font-bold animate-pulse" ref={footerRef}>Loading....</footer>}
+      { shouldDisplayLoadingFooter && <footer className="p-10 font-bold animate-pulse" ref={footerRef}> Loading.... </footer> }
     </main>
   )
 }
